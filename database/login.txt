@@ -1,0 +1,10 @@
+ADMINISTRADOR:
+gonza@aguirre.com
+aguirre
+
+CLIENTE:
+peter@bo.com
+123456
+
+svend@bo.com
+123456
