@@ -20,8 +20,11 @@ class MiControlador extends CI_Controller {
       $this->load->view('partes/header_view',$data);
     }
     
+    $this->load->model('Compra_model');
+    $data['productos'] = $this->Compra_model->obtenerMasComprados();
+
     $this->load->view('partes/nav_view');
-    $this->load->view('principal_view');
+    $this->load->view('principal_view', $data);
     $this->load->view('partes/footer_view');
   }
 

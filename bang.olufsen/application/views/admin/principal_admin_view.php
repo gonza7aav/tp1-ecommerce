@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="col-md-4">
-              <img src="<?php echo base_url('uploads/imagenes_producto/'.$row->producto_imagen); ?>" class="card-img" height="100" width="100">
+              <img src="<?php echo base_url('uploads/imagenes_producto/'.$row->producto_imagen); ?>" class="card-img" height="100" width="100" style="object-fit: contain;">
             </div>
           </div>
         </div>

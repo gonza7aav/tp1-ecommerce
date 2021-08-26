@@ -8,7 +8,7 @@ class Carrito_controller extends CI_Controller {
   }
 
   public function verCarrito () {
-    if ($this->session->userdata('login')) {
+    if ($this->session->userdata('perfil') == 2) {
       $data['titulo'] = 'Carrito';
       $this->load->view('partes/header_usuario_view', $data);
       $this->load->view('partes/nav_view');
@@ -72,7 +72,7 @@ class Carrito_controller extends CI_Controller {
   }
 
   public function comprar() {
-    if ($this->session->userdata('login')) {
+    if ($this->session->userdata('perfil') == 2) {
       if (!empty($this->cart->contents())) {
         $this->load->model('Producto_model');
         $hayStock = true;
@@ -80,6 +80,7 @@ class Carrito_controller extends CI_Controller {
           $producto = $this->Producto_model->buscarProducto($item['id']);
           if ($item['qty'] > $producto->producto_stock) {
             $hayStock = false;
+            $productoSinStock = $producto->producto_nombre;
             break;
           }
         }
@@ -117,7 +118,7 @@ class Carrito_controller extends CI_Controller {
           echo "<script type=\"text/javascript\">alert('Gracias por comprar con nosotros.');</script>";
           $this->verCarrito();
         } else {
-          echo "<script type=\"text/javascript\">alert('Al menos un producto que se quiere comprar, no posee stock.');</script>";
+          echo "<script type=\"text/javascript\">alert('El producto ".$producto->producto_nombre.", no posee suficiente stock (solo ".$producto->producto_stock." en stock).');</script>";
           $this->verCarrito();
         }
       } else {
@@ -129,20 +130,39 @@ class Carrito_controller extends CI_Controller {
     }
   }
 
-  public function verCompras($id, $orden) {
+  public function verCompras($id) {
     if ($this->session->userdata('login')) {
       $data['titulo'] = 'Compras';
 
       $this->load->model('Compra_model');
       $this->load->model('Producto_model');
 
-      if ($orden == 'ASC') {
-        $data['orden'] = 0;
-      } else {
-        $data['orden'] = 1;
-      }
       $data['id_recibida'] = $id;
-      $data['compras'] = $this->Compra_model->obtenerCompras($id, $orden);
+      $data['compras'] = $this->Compra_model->obtenerCompras($id, "DESC");
+      $data['detallecompras'] = $this->Compra_model->obtenerDetallecompras();
+      $data['productos'] = $this->Producto_model->obtenerProductos(0);
+
+      $this->load->view('partes/header_usuario_view', $data);
+      $this->load->view('partes/nav_view');
+      $this->load->view('compra_view', $data);
+      $this->load->view('partes/footer_view');
+    } else {
+      redirect('acceso_invalido');
+    }
+  }
+
+  public function verComprasFiltrada($id) {
+    if ($this->session->userdata('login')) {
+      $data['titulo'] = 'Compras';
+
+      $this->load->model('Compra_model');
+      $this->load->model('Producto_model');
+
+      $desde = $this->input->post('desde');
+      $hasta = $this->input->post('hasta');
+
+      $data['id_recibida'] = $id;
+      $data['compras'] = $this->Compra_model->obtenerComprasFiltradas($id, $desde, $hasta);
       $data['detallecompras'] = $this->Compra_model->obtenerDetallecompras();
       $data['productos'] = $this->Producto_model->obtenerProductos(0);
 

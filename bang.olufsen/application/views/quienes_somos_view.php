@@ -19,7 +19,7 @@
     <p>Más de 90 años después, nuestros productos aún se encuentran en el corazón de nuestra marca. Pero nuestro éxito continuo se debe a nuestra red independiente de socios minoristas, quienes comparten nuestra pasión en más de 700 tiendas en todo el mundo.</p>
   </section>
 
-  <section>
+  <!--<section>
     <div class="row">
       <blockquote class="blockquote text-right col-md-6 offset-md-5">
         <p class="mb-0">"Decidí trabajar solo con Bang & Olufsen en 1989, eligiendo la marca en lugar de otros fabricantes audiovisuales premium ... La decisión de concentrarse en Bang & Olufsen fue la correcta, la fortaleza de la marca nos permitió hacer crecer rápidamente el negocio para incluir otras cuatro tiendas minoristas, lo que contribuye significativamente a nuestra longevidad."</p>
@@ -32,6 +32,6 @@
         <footer class="blockquote-footer">Heino Østergaard, ex gerente y actual propietario en Dinamarca</footer>
       </blockquote>
     </div>
-  </section>
+  </section>-->
 
 </div>

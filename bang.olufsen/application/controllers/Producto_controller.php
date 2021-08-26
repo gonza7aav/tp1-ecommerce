@@ -14,7 +14,7 @@ class Producto_controller extends CI_Controller {
       $data['categorias'] = $this->Producto_model->selectCategorias();
       $data['categoria'] = $categoria;
 
-      $porPagina = 6;
+      $porPagina = 5;
       $data['productos'] = $this->Producto_model->obtenerProductosPaginacion($categoria, $porPagina, $pagina);
       $this->load->library('pagination');
       $url = "admin/listado/";

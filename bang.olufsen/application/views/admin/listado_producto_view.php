@@ -41,7 +41,7 @@
             <td>$<?php echo $this->cart->format_number($row->producto_precio); ?> </td>
             <td><?php echo $row->producto_oferta; ?>%</td>
             <td>
-              <img src="<?php echo base_url('uploads/imagenes_producto/'.$row->producto_imagen); ?>" height="100" width="100">
+              <img src="<?php echo base_url('uploads/imagenes_producto/'.$row->producto_imagen); ?>" height="100" width="100" style="object-fit: contain;">
             </td>
             <td>
               <a class="btn btn-outline-secondary btn-sm" href="<?php echo base_url("admin/modificar/".$row->producto_id); ?>">Modificar</a>

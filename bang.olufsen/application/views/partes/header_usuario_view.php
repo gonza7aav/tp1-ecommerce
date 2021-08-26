@@ -46,23 +46,25 @@
             </div>
           </li>
         <?php endif ?>
-        <li class="nav-item">
-          <div class="dropdown d-lg-none d-xl-none">
-            <a class="btn-link" href="<?php echo base_url('carrito'); ?>">Carrito</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <div class="dropdown d-lg-none d-xl-none">
-            <a class="btn-link" href="<?php echo base_url('compras/'.$this->session->userdata('id')); ?>">Mis Compras</a>
-          </div>
-        </li>
-        <?php if ($this->session->userdata('login')) : ?>
+        <?php if ($this->session->userdata('perfil') == 2) : ?>
+          <li class="nav-item">
+            <div class="dropdown d-lg-none d-xl-none">
+              <a class="btn-link" href="<?php echo base_url('carrito'); ?>">Carrito</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown d-lg-none d-xl-none">
+              <a class="btn-link" href="<?php echo base_url('compras/'.$this->session->userdata('id')); ?>">Mis Compras</a>
+            </div>
+          </li>
+        <?php endif ?>
+        <!-- arreglar <?php if ($this->session->userdata('login')) : ?>-->
           <li class="nav-item">
             <div class="dropdown d-lg-none d-xl-none">
               <a class="btn-link" href="<?php echo base_url('configuracion'); ?>">Mis datos</a>
             </div>
           </li>
-        <?php endif ?>
+        <!--<?php endif ?>-->
         <li class="nav-item">
           <div class="dropdown d-lg-none d-xl-none">
             <a class="btn-link" href="<?php echo base_url('salir'); ?>">Salir</a>
@@ -91,11 +93,13 @@
           <?php if ($this->session->userdata('perfil') == 1) : ?>
             <a class="dropdown-item" href="<?php echo base_url('admin'); ?>">Administrar</a>
           <?php endif ?>
-          <a class="dropdown-item" href="<?php echo base_url('carrito'); ?>">Carrito</a>
-          <a class="dropdown-item" href="<?php echo base_url('compras/'.$this->session->userdata('id')); ?>">Mis Compras</a>
-          <?php if ($this->session->userdata('login')) : ?>
-            <a class="dropdown-item" href="<?php echo base_url('configuracion'); ?>">Mis datos</a>
+          <?php if ($this->session->userdata('perfil') == 2) : ?>
+            <a class="dropdown-item" href="<?php echo base_url('carrito'); ?>">Carrito</a>
+            <a class="dropdown-item" href="<?php echo base_url('compras/'.$this->session->userdata('id')); ?>">Mis Compras</a>
           <?php endif ?>
+          <!-- arreglar <?php if ($this->session->userdata('login')) : ?>-->
+            <a class="dropdown-item" href="<?php echo base_url('configuracion'); ?>">Mis datos</a>
+          <!--<?php endif ?>-->
           <a class="dropdown-item" href="<?php echo base_url('salir'); ?>">Salir</a>
         </div>
       </div>

@@ -4,12 +4,16 @@
     <div class="col">
       <h2>Compras</h2>
     </div>
-    <div class="col">
-        <?php
-          $lista['0'] = 'Mas antiguo primero';
-          $lista['1'] = 'Mas nuevo primero';
-          echo form_dropdown('orden', $lista, $orden, ['id' => 'orden', 'class' => 'form-control w-50 float-right', 'onchange' => 'ordenar()']);
-        ?>
+    <?php echo form_open('Carrito_controller/verComprasFiltrada/'.$id_recibida); ?>
+    <div class="form-group form-row">
+      <div class="col">
+        <?php echo form_input(['name' => 'desde', 'id' => 'desde', 'type' => 'date', 'class' => 'form-control form-control-sm', 'value' => set_value('desde', date('Y-m-d')), 'onchange' => 'verificarFecha()']); ?>
+      </div>
+      <div class="col">
+        <?php echo form_input(['name' => 'hasta', 'id' => 'hasta', 'type' => 'date', 'class' => 'form-control form-control-sm', 'value' => set_value('hasta', date('Y-m-d')), 'onchange' => 'verificarFecha()']); ?>
+      </div>
+      <?php echo form_submit('aplicar', 'Aplicar', ['class' => 'btn btn-outline-secondary btn-sm']); ?>
+      <?php echo form_close(); ?>
     </div>
   </div>
 
@@ -104,17 +108,9 @@
 </div>
 
 <script>
-  function ordenar() {
-    <?php if ($id_recibida == 0) { $url = "admin/compras/"; } else { $url = "compras/".$id_recibida."/"; } ?>
-    switch (document.getElementById("orden").value) {
-      case '0': {
-        window.location = "<?php echo base_url($url."ASC"); ?>";
-        break;
-      }
-      case '1': {
-        window.location = "<?php echo base_url($url."DESC"); ?>";
-        break;
-      }
+  function verificarFecha () {
+    if (document.getElementById('desde').value > document.getElementById('hasta').value) {
+      alert('La fecha "desde" debe ser anterior a la fecha "hasta".');
     }
   }
 </script>

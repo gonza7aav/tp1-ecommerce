@@ -73,9 +73,6 @@ $route['catalogo/ofertas/(:num)'] = 'Producto_controller/verOferta/$1';
 
 $route['busqueda'] = 'Producto_controller/verBusqueda';
 
-$route['verano2019'] = '';
-$route['beosound_shape'] = '';
-
 //SESION
 $route['registro'] = 'Cliente_controller/verRegistro';
 $route['login'] = 'Usuario_controller/verLogin';
@@ -83,9 +80,8 @@ $route['configuracion'] = 'Cliente_controller/verModificarCliente';
 $route['salir'] = 'Usuario_controller/cerrarSesion';
 $route['carrito'] = 'Carrito_controller/verCarrito';
 /************************************/
-$route['compras/(:num)'] = 'Carrito_controller/verCompras/$1/ASC';
-$route['compras/(:num)/ASC'] = 'Carrito_controller/verCompras/$1/ASC';
-$route['compras/(:num)/DESC'] = 'Carrito_controller/verCompras/$1/DESC';
+$route['compras/(:num)'] = 'Carrito_controller/verCompras/$1';
+$route['comprasFecha/(:num)'] = 'Carrito_controller/verComprasFiltrada/$1';
 
 $route['admin'] = 'MiControlador/verAdmin';
 
@@ -105,9 +101,8 @@ $route['admin/producto'] = 'Producto_controller/verRegistro';
 $route['admin/modificar/(:num)'] = 'Producto_controller/verModificarProducto/$1';
 $route['admin/consultas'] = 'Consulta_controller/verConsultas';
 /************************************/
-$route['admin/compras'] = 'Carrito_controller/verCompras/0/ASC';
-$route['admin/compras/ASC'] = 'Carrito_controller/verCompras/0/ASC';
-$route['admin/compras/DESC'] = 'Carrito_controller/verCompras/0/DESC';
+$route['admin/compras'] = 'Carrito_controller/verCompras/0';
+$route['admin/comprasFecha'] = 'Carrito_controller/verComprasFiltrada/0';
 
 $route['acceso_invalido'] = 'MiControlador/verAccesoInvalido';
 

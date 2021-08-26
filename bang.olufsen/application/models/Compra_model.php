@@ -25,6 +25,20 @@ class Compra_model extends CI_Model {
     return $query->result();
   }
 
+  public function obtenerComprasFiltradas($id, $desde, $hasta) {
+    $this->db->select('*');
+    $this->db->from('compra');
+    if ($id != 0) {
+      $this->db->where('compra_cliente', $id);
+    }
+    $this->db->where('compra_fecha >=', $desde);
+    $this->db->where('compra_fecha <=', $hasta);
+    $this->db->join('cliente', 'cliente.cliente_id = compra.compra_cliente');
+    $this->db->order_by('compra_id', "DESC");
+    $query = $this->db->get();
+    return $query->result();
+  }
+
   public function obtenerDetallecompras() {
     $query = $this->db->get('detallecompra');
     return $query->result();

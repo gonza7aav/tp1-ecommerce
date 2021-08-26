@@ -20,7 +20,7 @@
                   <p class="card-text"><small class="text-muted">$<?php echo $this->cart->format_number($row->producto_precio); ?> </small></p>
                 <?php } ?>
 
-                <?php if ($this->session->userdata('login')) {
+                <?php if ($this->session->userdata('perfil') == 2) {
                   echo form_open('Carrito_controller/agregar');
 
                   echo form_hidden('id', $row->producto_id);
@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="col-md-4">
-              <img src="<?php echo base_url('uploads/imagenes_producto/'.$row->producto_imagen); ?>" class="card-img" height="100" width="100">
+              <img src="<?php echo base_url('uploads/imagenes_producto/'.$row->producto_imagen); ?>" class="card-img" height="100" width="100" style="object-fit: contain;">
             </div>
           </div>
         </div>

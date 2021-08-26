@@ -62,8 +62,16 @@
         </div>
         <div class="col">
           <?php echo form_label('Repetir Contraseña', 'repeticionContraseña'); ?>
-          <?php echo form_input(['name' => 'repeticionContraseña', 'id' => 'repeticionContraseña', 'type' => 'password', 'class' => 'form-control', 'value' => set_value('repeticionContraseña')]); ?>            
+          <?php echo form_input(['name' => 'repeticionContraseña', 'id' => 'repeticionContraseña', 'type' => 'password', 'class' => 'form-control', 'value' => set_value('')]); ?>            
           <span class="text-danger"><?php echo form_error('repeticionContraseña'); ?></span>
+        </div>
+      </div>
+
+      <div class="form-group form-row">
+        <div class="col">
+          <?php echo form_checkbox(['name' => 'aceptoTerminos', 'id' => 'aceptoTerminos', 'value' => TRUE]); ?>
+          Acepto los <a href="<?php echo base_url('terminos'); ?>" class="btn-link">Terminos de uso</a>.
+          <span class="text-danger"><?php echo form_error('aceptoTerminos'); ?></span>
         </div>
       </div>
 

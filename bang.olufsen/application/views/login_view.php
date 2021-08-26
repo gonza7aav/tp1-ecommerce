@@ -5,7 +5,7 @@
 
       <div class="form-group form-row w-75 mx-auto">
         <?php echo form_label('Email', 'email'); ?>
-          <?php echo form_input(['name' => 'email', 'id' => 'email', 'type' => 'text', 'class' => 'form-control', 'value' => set_value('email')]); ?>            
+          <?php echo form_input(['name' => 'email', 'id' => 'email', 'type' => 'text', 'class' => 'form-control', 'value' => set_value('email')]); ?>
           <span class="text-danger"><?php echo form_error('email'); ?></span>
       </div>
 

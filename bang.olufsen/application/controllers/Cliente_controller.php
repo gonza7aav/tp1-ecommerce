@@ -32,6 +32,7 @@ class Cliente_controller extends CI_Controller {
       $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[usuario.usuario_email]');
       $this->form_validation->set_rules('contraseña', 'Contraseña', 'required');
       $this->form_validation->set_rules('repeticionContraseña', '', 'matches[contraseña]');
+      $this->form_validation->set_rules('aceptoTerminos', '', 'callback_verificarAceptacionTerminos');
     }
 
     $this->form_validation->set_message('required', 'El campo %s es obligatorio.');
@@ -42,6 +43,15 @@ class Cliente_controller extends CI_Controller {
     if ($this->form_validation->run()) {
       return true;
     } else {
+      return false;
+    }
+  }
+
+  function verificarAceptacionTerminos($opcion) {
+    if ($opcion) {
+      return true;
+    } else {
+      $this->form_validation->set_message('verificarAceptacionTerminos', 'Se deben aceptar los Terminos de Uso.');
       return false;
     }
   }

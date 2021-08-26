@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2019 at 07:24 AM
+-- Generation Time: Jun 25, 2019 at 07:58 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -87,10 +87,10 @@ CREATE TABLE `compra` (
 --
 
 INSERT INTO `compra` (`compra_id`, `compra_cliente`, `compra_fecha`) VALUES
-(12, 14, '2019-06-11'),
-(13, 15, '2019-06-11'),
+(12, 14, '2019-06-09'),
+(13, 15, '2019-06-10'),
 (14, 15, '2019-06-11'),
-(15, 13, '2019-06-11');
+(15, 13, '2019-06-12');
 
 -- --------------------------------------------------------
 
@@ -302,7 +302,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `compra`
@@ -332,7 +332,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
@@ -354,8 +354,8 @@ ALTER TABLE `compra`
 -- Constraints for table `detallecompra`
 --
 ALTER TABLE `detallecompra`
-  ADD CONSTRAINT `detallecompra_ibfk_1` FOREIGN KEY (`detalleCompra_compra`) REFERENCES `compra` (`compra_id`),
-  ADD CONSTRAINT `detallecompra_ibfk_2` FOREIGN KEY (`detalleCompra_producto`) REFERENCES `producto` (`producto_id`);
+  ADD CONSTRAINT `detallecompra_ibfk_1` FOREIGN KEY (`detallecompra_compra`) REFERENCES `compra` (`compra_id`),
+  ADD CONSTRAINT `detallecompra_ibfk_2` FOREIGN KEY (`detallecompra_producto`) REFERENCES `producto` (`producto_id`);
 
 --
 -- Constraints for table `producto`
