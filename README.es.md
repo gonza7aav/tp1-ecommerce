@@ -6,7 +6,7 @@
 
 </div>
 
-Este es un proyecto universitario presentado para la catedra _Taller de Programacion I_, es por ese motivo que se encuentra completamente en español.
+Proyecto universitario presentado para la cátedra _Taller de Programación I_, es por ese motivo que se encuentra completamente en español.
 
 Una web app para la gestión de ventas online de equipos de audio de la marca _Bang & Olufsen_. Realizado en _PHP_ con el Framework _CodeIgniter_, _Bootstrap_ y _MySQL_ siguiendo el patrón de diseño _MVC_. Se puede encontrar adjunto la [Especificación de requerimientos](SRS.md) del proyecto.
 
@@ -26,15 +26,15 @@ Una web app para la gestión de ventas online de equipos de audio de la marca _B
 
 ## 🚀 Ejecución
 
-Luego de inicialos los servicios de _Apache_ y _MySQL_, ir a [localhost/bang.olufsen](http://localhost/bang.olufsen/)
+Luego de iniciar los servicios de _Apache_ y _MySQL_, ir a [localhost/bang.olufsen](http://localhost/bang.olufsen/)
 
 ### 🔑 Acceso
 
-| Perfil | Email             | Contraseña |
-| ------ | ----------------- | ---------- |
-| admin  | gonza@aguirre.com | aguirre    |
-| client | peter@bo.com      | 123456     |
-| client | svend@bo.com      | 123456     |
+| Perfil        | Email             | Contraseña |
+| ------------- | ----------------- | ---------- |
+| Administrador | gonza@aguirre.com | aguirre    |
+| Cliente       | peter@bo.com      | 123456     |
+| Cliente       | svend@bo.com      | 123456     |
 
 ## 📝 Licencia
 
