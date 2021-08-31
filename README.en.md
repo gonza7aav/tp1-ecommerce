@@ -2,7 +2,7 @@
 
 <div align='center'>
 
-[Spanish](README.es.md)
+[![Léeme en Español](https://img.shields.io/badge/Léeme%20en-Español-brightgreen)](README.es.md)
 
 </div>
 
