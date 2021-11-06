@@ -1,0 +1,11 @@
+# Ignore all the framework boilerplate
+bang.olufsen/** linguist-generated=true
+bang.olufsen/**/* linguist-generated=true
+
+# Don't ignore the ones I wrote
+bang.olufsen/application/controllers/** linguist-generated=false
+bang.olufsen/application/models/** linguist-generated=false
+bang.olufsen/application/views/** linguist-generated=false
+
+# Some .php files are detected as Hack
+*.php linguist-language=PHP
